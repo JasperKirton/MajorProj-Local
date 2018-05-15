@@ -1,0 +1,17 @@
+Timestamp,Score,Please type your first name followed by your initials (e.g John HS),What's your email address?,"Overall, how would you rate the quality of your recommendations on this app?",How likely would you be to use a service like this again?,Any other feedback you'd like to give?
+5/3/2018 18:21:47,,,,3,3,
+5/3/2018 18:34:59,,Edmund OE,,5,5,Nice idea for people who like a variety of music styles
+5/4/2018 13:06:36,,Leon FE,,3,3,"I can't remember the internals of this app / how it works, so forgive me if this isn't relevant. I feel like my music taste is incredibly varied, but is very, very specific on a few artists over a wide range of genres, which is going to make me hard to model - there will be a lot of stuff I simply wont like. It seems to me the best way to combat this is to find the 12 other weirdos like me on the internet and do some collaborative filtering to align our interests and make relevant recommendations. I don't know though, just thinking about it now, I can see how it is a difficult problem; I'd be inclined to go a deep learning approach and learn a song similarity metric through contrastive/triplet losses, but that would probably return loads of bad results too as they don't scale well."
+5/4/2018 17:29:31,,jb,jaredziff2@gmail.com,3,2,
+5/4/2018 17:44:11,,Julie JP,gpetitbon@verizon.net,2,2,I liked some of the choices but did not feel like they connected to my chosen artists.
+5/4/2018 17:59:51,,suresh,casureshmuthusamy@gmail.com,5,3,good survey on music hearing i like it very much
+5/4/2018 18:03:02,,Ryan JP,kellypinkfan@gmail.com,2,2,No.
+5/4/2018 21:18:56,,Kimberly MO,kimberlyosullivan1373@gmail.com,3,4,
+5/4/2018 21:22:42,,Sunny SS,sparkofsatya@gmail.com,3,3,
+5/4/2018 21:39:02,,DILLON DM,dillon_moore@msn.com,2,1,"The service needs some work, most were different than what I picked."
+5/4/2018 21:41:02,,ASZ56AVQ9MQUK,strmohan03@gmail.com,5,5,Very good
+5/4/2018 21:56:41,,Carlo ES,jcd@europe.com,2,3,
+5/4/2018 22:05:39,,john vj,skip272@gmail.com,5,4,
+5/4/2018 22:37:07,,Tal AH,talhendrickse22@gmail.com,3,3,
+5/5/2018 12:22:59,,William C,william.gm.crabb@gmail.com,3,4,
+,,,,3.285714286,3.142857143,

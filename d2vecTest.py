@@ -20,7 +20,7 @@ d2v_model = gensim.models.doc2vec.Doc2Vec.load('doc2vec.model')
 #print(similar_doc)
 
 # to get most similar document with similarity scores using document-name
-sims = d2v_model.docvecs.most_similar('6031.txt')
+sims = d2v_model.docvecs.most_similar('500.txt')
 print(sims)
 
 
@@ -32,7 +32,6 @@ print(sims)
 #d2v_model.save('model.pkl', pickle_protocol=2)
 
 '''
-
 dest = os.path.join('d2vModel', 'pkl_objects')
 
 if not os.path.exists(dest):

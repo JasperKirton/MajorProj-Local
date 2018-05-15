@@ -134,7 +134,7 @@ for sp_id in idDictPost.values():
         uriPost = sp_id
     print(uriPost)
     time.sleep(0.03)
-    #  world: avoid over-requesting the API, leave for 45m - leaving 15m till token expires. Reality: append to text file and re-compile
+    # avoid over-requesting the API, leave for 45m - leaving ~15m till token expires.
     headers = {'Authorization': 'Bearer BQA5Gzl6qZjKy-DWA956ZiQSqFG_aStocZGmyV4y66jht70xPj76-aTSsTLe9GhHSm_lVy5Kj4LgMQMrirQ'}
     r = requests.get('https://api.spotify.com/v1/albums/' + str(uriPost), headers=headers)
     sp_data = json.loads(r.text)

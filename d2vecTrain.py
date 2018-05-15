@@ -5,7 +5,7 @@ from nltk import RegexpTokenizer
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from os import listdir
-from os.path import isfile, join
+# from os.path import isfile, join
 
 # now create a list that contains the name of all the text file in
 # your data folder
@@ -19,7 +19,7 @@ data = []
 for doc in docLabels:
     data.append(open("/Users/jasperkirton/Documents/gSMiths/MajorProj/Train/" + doc).read())
 
-tokenizer = RegexpTokenizer(r'\w+') # think i'm discarding this as it's excluding punctuation, instead we use the following:
+#tokenizer = RegexpTokenizer(r'\w+')  # think i'm discarding this as it's excluding punctuation, instead we use the following:
 #tokens = word_tokenize(text)
 stopword_set = set(stopwords.words('english'))
 
@@ -29,7 +29,7 @@ def nlp_clean(data):
     new_data = []
     for d in data:
         new_str = d.lower()
-        dlist = tokenizer.tokenize(new_str)
+        dlist = word_tokenize(new_str)
         dlist = list(set(dlist).difference(stopword_set))
         new_data.append(dlist)
     return new_data
@@ -45,7 +45,7 @@ class LabeledLineSentence(object):
     def __iter__(self):
 
         for idx, doc in enumerate(self.doc_list):
-            yield gensim.models.doc2vec.LabeledSentence(doc, [self.labels_list[idx]])
+            yield gensim.models.doc2vec.TaggedDocument(doc, [self.labels_list[idx]])  # labeled sentence is deprecated, still loads i guess, maybe a better way to do it...
 
 
 data = nlp_clean(data)
@@ -53,15 +53,11 @@ data = nlp_clean(data)
 # iterator returned over all docs
 it = LabeledLineSentence(data, docLabels)
 
-model = gensim.models.Doc2Vec(size=300, min_count=0, alpha=0.025)
+model = gensim.models.Doc2Vec(vector_size=300, min_count=2, alpha=0.025)
 model.build_vocab(it)
 
-# training of model
-for epoch in range(100):
-    print('iteration '+ str(epoch+1))
-    model.train(it, total_examples=model.corpus_count, epochs=100)
-    model.alpha -= 0.002
-    model.min_alpha = model.alpha
+
+model.train(it, total_examples=model.corpus_count, epochs=200)  # using inner epochs seems to work well
 
 # saving the created model and confirm
 model.save('doc2vec.model')
