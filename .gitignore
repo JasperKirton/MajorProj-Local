@@ -8,6 +8,7 @@
 *.so
 *.pkl
 *.npy
+*.pdf
 
 # Packages #
 ############
